@@ -44,21 +44,21 @@ export const checkoutOrder = async (order: CheckoutOrderParams) => {
   }
 }
 
-// export const createOrder = async (order: CreateOrderParams) => {
-//   try {
-//     await connectToDatabase();
+export const createOrder = async (order: CreateOrderParams) => {
+  try {
+    await connectToDatabase();
     
-//     const newOrder = await Order.create({
-//       ...order,
-//       event: order.eventId,
-//       buyer: order.buyerId,
-//     });
+    const newOrder = await Order.create({
+      ...order,
+      event: order.eventId,
+      buyer: order.buyerId,
+    });
 
-//     return JSON.parse(JSON.stringify(newOrder));
-//   } catch (error) {
-//     handleError(error);
-//   }
-// }
+    return JSON.parse(JSON.stringify(newOrder));
+  } catch (error) {
+    handleError(error);
+  }
+}
 
 // // GET ORDERS BY EVENT
 // export async function getOrdersByEvent({ searchString, eventId }: GetOrdersByEventParams) {
