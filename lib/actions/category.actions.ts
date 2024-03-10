@@ -1,4 +1,3 @@
-
 "use server"
 
 import { CreateCategoryParams } from "@/types"
